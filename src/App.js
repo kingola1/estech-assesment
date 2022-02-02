@@ -1,50 +1,25 @@
 import React, { Component } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import {Container, Row, Col, Flex} from 'react-bootstrap';
+import Bootstrap from 'bootstrap';
 
-import axios from 'axios';
+import GameLists from './components/GameLists';
+import './App.css';
 
-const api = axios.create({
-    baseURL: `https://adaorachi.github.io/esetech-assessment-api/game-data.json`
-  })
-  
 class App extends Component{
-    
-    constructor(){
-        super();
-        api.get('/').then (res => {
-          console.log(res.data)
-        })
-      }
-
-      render(){
-          return (
-            <Card sx={{ maxWidth: 345 }}>
-                 <CardActionArea>
-                   <CardMedia
-                     component="img"
-                     height="140"
-                     image="/static/images/cards/contemplative-reptile.jpg"
-                     alt="green iguana"
-                   />
-                   <CardContent>
-                     <Typography gutterBottom variant="h5" component="div">
-                       Lizard
-                     </Typography>
-                     <Typography variant="body2" color="text.secondary">
-                       Lizards are a widespread group of squamate reptiles, with over 6,000
-                       species, ranging across all continents except Antarctica
-                     </Typography>
-                   </CardContent>
-                 </CardActionArea>
-               </Card>
-          );
-      }
-    
+  render() {
+    return(
+      <div>
+        <GameLists />
+      </div>
+    );
+  }
 }
 
-
 export default App;
+
+// - **Body background** - Vertical linear-gradient #081221 to #03080f
+// - **Card / panel background** - #0e1a2b
+// - **Headings / button text / labels** - #ffffff
+// - **Text** - #c1d1e8
+// - **Input background** - ****#182c47
+// - **Buttons / accent blue** - #5692e8
